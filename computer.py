@@ -1,14 +1,14 @@
 from player import Player
 import random
 
+
 class computer(Player):
     def __init__(self):
         super().__init__()
         self.gesture
 
-    def set_ai_name(self):
-        self.ai_name = random.choice(0, 2)
-        return self.ai_name
+    def computer_name(self):
+        self.name = input('Please enter the computers name: ')
 
     def chosen_gesture(self):
         self.chosen_gesture = random.randint(0, 4)

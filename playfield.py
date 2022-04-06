@@ -1,11 +1,11 @@
 from computer import computer
 from humans import human
-from player import Player
+
 
 class Playfield:
     def __init__(self):
         self.player_one = human()
-        self.player_one = None
+        self.player_two = None
 
     def run_game(self):
         self.display_message()
@@ -15,25 +15,24 @@ class Playfield:
 
     def display_message(self):
         print("Welcome to Rock, Paper, Scissors, Lizard, Spock!")
-        print("""RULES: Rock crushes Scissors
-                        Scissors cuts Paper 
-                        Paper covers Rock 
-                        Rock crushes Lizard 
-                        Lizard poisons Spock 
-                        Spock smashes Scissors 
-                        Scissors decapitates Lizard 
-                        Lizard eats Paper 
-                        Paper disproves Spock 
-                        Spock vaporizes Rock""")
+        print("RULES: Rock crushes Scissors")
+        print("Scissors cuts Paper") 
+        print("Paper covers Rock") 
+        print("Rock crushes Lizard") 
+        print("Lizard poisons Spock") 
+        print("Spock smashes Scissors") 
+        print("Scissors decapitates Lizard") 
+        print("Lizard eats Paper")
+        print("Paper disproves Spock")
+        print("Spock vaporizes Rock")
 
     def game_settings(self):
-        game_type = input(
-            'Do you want to play single player or multiplayer?: ')
+        game_type = input('Do you want to play single player or multiplayer?: ')
         game_settings = False
         while game_settings == False:
             if game_type == 'single player':
                 self.player_two = computer()
-                self.player_one.player_name()
+                self.player_one.player_one_name()
                 self.player_two.computer_name()
                 print('Are you really sure you want to play against the AI?')
                 game_settings = True
@@ -46,11 +45,8 @@ class Playfield:
 
 # displays welcome message and rules of the game
 # 
-    def battlefield(self, Player):
-        players = human, computer
-        gestures = ['Rock', 'Paper','Scissors', 'Lizard','Spock']
+    def battlefield(self):
 
-        if human == input("Rock"):
             
 
             print()
