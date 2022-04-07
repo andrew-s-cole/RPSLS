@@ -13,7 +13,7 @@ class human(Player):
         
         
         
-        player_input = (input('Please select your gesture: '))
+        player_input = input('Please select your gesture: ')
             
         if player_input == self.gestures[0]:
                     self.gesture_selection = self.gestures[0]

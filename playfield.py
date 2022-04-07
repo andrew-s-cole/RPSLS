@@ -26,16 +26,16 @@ class Playfield:
         print("Paper disproves Spock")
         print("Spock vaporizes Rock")
     def game_settings(self):
-        game_type = input('Do you want to play single player or multiplayer?: ')
+        game_type = int(input('If you would like to play single press (1), if you would like to play multiplayer, press (2): '))
         game_settings = False
         while game_settings == False:
-            if game_type == 'single player':
+            if game_type == 1:
                 self.player_two = computer()
                 self.player_one.player_one_name()
                 self.player_two.computer_name()
-                print('Are you really sure you want to play against the AI?')
+                print('Prepare to be crushed by RNG!')
                 game_settings = True
-            elif game_type == 'multiplayer':
+            elif game_type == 2:
                 self.player_two = human()
                 self.player_one.player_one_name()
                 self.player_two.player_two_name()
@@ -52,43 +52,43 @@ class Playfield:
             if self.player_one.gesture_selection == self.player_two.gesture_selection:
              print('The result is a tie')
 
-            elif  self.player_one.gestures[0] and  self.player_two.gestures[2]:
+            elif  self.player_one.gesture_selection == self.player_one.gestures[0] and self.player_two.gesture_selection ==  self.player_two.gestures[2]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[0] and  self.player_two.gestures[3]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[0] and  self.player_two.gesture_selection == self.player_two.gestures[3]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif self.player_one.gestures[1] and  self.player_two.gestures[0]:
+             print(f'{self.player_one.name} wins this round.')
+            elif self.player_one.gesture_selection == self.player_one.gestures[1] and  self.player_two.gesture_selection == self.player_two.gestures[0]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif self.player_one.gestures[1] and self.player_two.gestures[4]:
+             print(f'{self.player_one.name} wins this round.')
+            elif self.player_one.gesture_selection == self.player_one.gestures[1] and self.player_two.gesture_selection == self.player_two.gestures[4]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[2] and self.player_two.gestures[1]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[2] and self.player_two.gesture_selection == self.player_two.gestures[1]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[2] and  self.player_two.gestures[3]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[2] and  self.player_two.gesture_selection == self.player_two.gestures[3]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[3] and  self.player_two.gestures[1]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[3] and  self.player_two.gesture_selection == self.player_two.gestures[1]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[3] and  self.player_two.gestures[4]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[3] and  self.player_two.gesture_selection == self.player_two.gestures[4]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[4] and  self.player_two.gestures[0]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[4] and  self.player_two.gesture_selection == self.player_two.gestures[0]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
-            elif  self.player_one.gestures[4] and self.player_two.gestures[2]:
+             print(f'{self.player_one.name} wins this round.')
+            elif  self.player_one.gesture_selection == self.player_one.gestures[4] and self.player_two.gesture_selection == self.player_two.gestures[2]:
              self.player_one.score += 1
-             print(f'{self.player_one.name} wins.')
+             print(f'{self.player_one.name} wins this round.')
 
             else:
              self.player_two.score += 1
-             print(f'{self.player_two.name} wins.')
+             print(f'{self.player_two.name} wins this round.')
 
     def display_winner(self):
       if self.player_one.score == 2:
-          print(f'{self.player_one.name} wins!')
+          print(f'{self.player_one.name} has won the game!')
       elif self.player_two.score == 2:
-          print(f'{self.player_two.name} wins!')
+          print(f'{self.player_two.name} has won the game!')
