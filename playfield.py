@@ -91,4 +91,4 @@ class Playfield:
       if self.player_one.score == 2:
           print(f'{self.player_one.name} wins!')
       elif self.player_two.score == 2:
-            print(f'{self.player_two.name} wins!')
+          print(f'{self.player_two.name} wins!')
